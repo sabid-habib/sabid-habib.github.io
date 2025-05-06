@@ -23,7 +23,7 @@
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
   --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
+  --bs-gray-dark: #943a40;
   --bs-gray-100: #f8f9fa;
   --bs-gray-200: #e9ecef;
   --bs-gray-300: #dee2e6;
@@ -40,7 +40,7 @@
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
-  --bs-dark: #212529;
+  --bs-dark: #111519;
   --bs-primary-rgb: 38, 97, 80;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
@@ -48,19 +48,19 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-rgb: 83, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-color-rgb: 63, 17, 91;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: 'Raleway', sans-serif;
+  --bs-font-sans-serif: 'Helvetica', sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: 'Raleway', sans-serif;
+  --bs-body-font-family: 'Helvetica', sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: #111519;
   --bs-body-bg: #fff;
 }
 
@@ -104,10 +104,10 @@ hr:not([size]) {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  color: #343a40;
+  color: #242a40;
 }
 
 h1, .h1 {
@@ -11291,7 +11291,7 @@ textarea.form-control-lg {
 }
 body {
   padding-top: 3.375rem;
-  color: #555555;
+  color: #252525;
 }
 
 @media (min-width: 992px) {
@@ -11316,10 +11316,11 @@ p.lead {
 }
 
 .subheading {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: font-family: 'Helvetica', sans-serif;
   font-weight: 500;
   margin-top: 0.2rem;
   font-size: 1.5rem;
+  color: #111111
 }
 
 #sideNav {
@@ -11383,7 +11384,7 @@ p.lead {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
+  background-color: #394047;
   color: #fff;
   border-radius: 100%;
   font-size: 1.5rem;
@@ -11393,7 +11394,7 @@ p.lead {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: #bd5d38;
+  background-color: #0daa69;
 }
 
 .dev-icons {

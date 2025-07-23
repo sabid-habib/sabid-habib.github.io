@@ -241,10 +241,6 @@
             flex: 1;
         }
         
-        .desktop-only { display: block; }
-		.mobile-only { display: none; }
-
-        
         .verification-matrix {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -361,40 +357,30 @@
                 margin-bottom: 10px;
             }
             
-			.desktop-only { display: none; }
-			.mobile-only { display: block; }
-			
-			.mobile-table {
-				margin-bottom: 25px;
-			}
-			
-			.mobile-table h4 {
-				text-align:center;
-				margin-bottom: 10px;
-				color: #2c3e50;
-				font-size: 16px;
-			}
-			
-			.table-grid {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 2px;
-				background: #2c3e50;
-				border-radius: 10px;
-				overflow: hidden;
+			.verification-matrix {
+				grid-template-columns: 1fr;
+				gap: 1px;
+				margin: 20px 0;
 			}
 			
 			.matrix-cell {
-				background: white;
 				padding: 15px 10px;
-				text-align: center;
 			}
 			
+			.matrix-cell small {
+				font-size: 12px;
+				line-height: 1.3;
+			}
+			
+			/* Hide the empty top-left cell on mobile */
+			.matrix-cell:first-child {
+				display: none;
+			}
+			
+			/* Style headers differently on mobile */
 			.matrix-header {
-				background: #2c3e50;
-				color: white;
-				font-weight: 600;
 				font-size: 14px;
+				padding: 12px 10px;
 			}
         }
     </style>
@@ -561,76 +547,34 @@
                 </div>
 
                 <!-- Verification Matrix -->
-				
-				
-				<div class="section">
-					<h3>Verification Attitude Matrix</h3>
-					
-					<!-- Desktop view -->
-					<div class="verification-matrix desktop-only">
-						
-						<div class="matrix-cell matrix-header empty-cell"></div>
-						<div class="matrix-cell matrix-header">Low Domain Familiarity</div>
-						<div class="matrix-cell matrix-header">High Domain Familiarity</div>
-						
-						<div class="matrix-cell matrix-header">Low Stakes</div>
-						<div class="matrix-cell">
-							<div class="verification-level">Quick Check</div>
-							<small>Simple verification to gain confidence</small>
-						</div>
-						<div class="matrix-cell">
-							<div class="verification-level">Minimal Verification</div>
-							<small>Trust existing knowledge</small>
-						</div>
-						
-						<div class="matrix-cell matrix-header">High Stakes</div>
-						<div class="matrix-cell">
-							<div class="verification-level">Extensive Verification</div>
-							<small>Multiple sources and expert consultation</small>
-						</div>
-						<div class="matrix-cell">
-							<div class="verification-level">Moderate Verification</div>
-							<small>Targeted checks on key steps</small>
-						</div>
-						
-
-					</div>
-					
-					<!-- Mobile view -->
-					<div class="mobile-tables mobile-only">
-						<div class="mobile-table">
-							<h4>Low Stakes Scenarios</h4>
-							<div class="table-grid">
-								<div class="matrix-cell matrix-header">Low Domain</div>
-								<div class="matrix-cell matrix-header">High Domain</div>
-								<div class="matrix-cell">
-									<div class="verification-level">Quick Check</div>
-									<small>Simple verification to gain confidence</small>
-								</div>
-								<div class="matrix-cell">
-									<div class="verification-level">Minimal Verification</div>
-									<small>Trust existing knowledge</small>
-								</div>
-							</div>
-						</div>
-						
-						<div class="mobile-table">
-							<h4>High Stakes Scenarios</h4>
-							<div class="table-grid">
-								<div class="matrix-cell matrix-header">Low Domain</div>
-								<div class="matrix-cell matrix-header">High Domain</div>
-								<div class="matrix-cell">
-									<div class="verification-level">Extensive Verification</div>
-									<small>Multiple sources and expert consultation</small>
-								</div>
-								<div class="matrix-cell">
-									<div class="verification-level">Moderate Verification</div>
-									<small>Targeted checks on key steps</small>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="section">
+                    <h3>Verification Attitude Matrix</h3>
+                    <div class="verification-matrix">
+                        <div class="matrix-cell matrix-header"></div>
+                        <div class="matrix-cell matrix-header">Low Domain Familiarity</div>
+                        <div class="matrix-cell matrix-header">High Domain Familiarity</div>
+                        
+                        <div class="matrix-cell matrix-header">Low Stakes</div>
+                        <div class="matrix-cell">
+                            <div class="verification-level">Quick Check</div>
+                            <small>Simple verification to gain confidence</small>
+                        </div>
+                        <div class="matrix-cell">
+                            <div class="verification-level">Minimal Verification</div>
+                            <small>Trust existing knowledge</small>
+                        </div>
+                        
+                        <div class="matrix-cell matrix-header">High Stakes</div>
+                        <div class="matrix-cell">
+                            <div class="verification-level">Extensive Verification</div>
+                            <small>Multiple sources and expert consultation</small>
+                        </div>
+                        <div class="matrix-cell">
+                            <div class="verification-level">Moderate Verification</div>
+                            <small>Targeted checks on key steps</small>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- User Stories with Quotes -->
                 <div class="section">

@@ -27,6 +27,8 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+			flex-direction: column;
         }
         .header {
             padding: 60px 0;
@@ -103,6 +105,7 @@
             border-radius: 20px;
             font-size: 0.9em;
             margin-right: 8px;
+            margin-bottom: 4px;
         }
 
         /* Alternative compact grid style */
@@ -207,6 +210,11 @@
             margin-bottom: 20px;
             text-align: center;
         }
+        
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
 
         .click-feedback {
             position: fixed;
@@ -224,7 +232,7 @@
                 font-size: 2rem;
             }
             
-            .content-grid {
+            .grid {
                 grid-template-columns: 1fr;
             }
             
@@ -259,11 +267,10 @@
     </header>
     <div class="container">
         
-        <div class="click-feedback" id="clickFeedback">Item clicked!</div>
  
         <div class="grid">
             <div class="grid-item" onclick="window.location.href='voice_assistant_tone.html'">
-                <img src="assets/img/va-tone.png" alt="User Experience of Varying Vocal Characteristics of Voice Assistants">
+                <img src="assets/img/va-tone.png" alt="User Experience of Varying Vocal Characteristics of Voice Assistants" class="responsive-img">
                 <div class="grid-content">
                     <h3 class="grid-title">User Experience of Voice Assistants' Vocal Characteristics</h3>
                     <p class="grid-description">Evaluation of how voice assistants' vocal tone variations influence user trust, decision-making, and the overall experience.</p>
@@ -274,7 +281,7 @@
             </div>
 
             <div class="grid-item" onclick="window.location.href='ca_verification.html'">
-                <img src="assets/img/ca-verification.png" alt="users' decision-making awareness and verification method when receiving AI assistant recommendations">
+                <img src="assets/img/ca-verification.png" alt="users' decision-making awareness and verification method when receiving AI assistant recommendations" class="responsive-img">
                 <div class="grid-content">
                     <h3 class="grid-title">Recommendation Verification Behavior with Conversational AI</h3>
                     <p class="grid-description">A study on users' decision-making awareness and verification method when receiving AI assistant recommendations.</p>

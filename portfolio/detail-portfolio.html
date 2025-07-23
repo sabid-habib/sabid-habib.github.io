@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabid Bin Habib Pias - UX Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .project {
+            padding: 80px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: #363435;
+            margin-bottom: 2rem;
+        }
+        
+        .award-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #20a070 0%, #146c48 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        
+        .section {
+            margin: 50px 0;
+        }
+        
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .content-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .content-card p {
+            color: #373634;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .content-card ul {
+            list-style: none;
+            color: #373634;
+        }
+        
+        .content-card li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .content-card li:before {
+            content: "•";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            color: #373634;
+            font-weight: 500;
+        }
+        
+        .timeline {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .timeline h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-phase {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            min-width: 120px;
+            text-align: center;
+            margin-right: 20px;
+        }
+        
+        .timeline-desc {
+            color: #373634;
+            flex: 1;
+        }
+        
+        .paper-link {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .paper-link:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 25px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        .responsive-img {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline-phase {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Sabid Bin Habib Pias</h1>
+            <p>UX Researcher & Human-Computer Interaction Specialist</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#conversational-ai">Voice Assistant Persuasion</a></li>
+                <li><a href="#privacy-nudges">Privacy AI Warnings</a></li>
+                <li><a href="#decision-awareness">Decision Awareness</a></li>
+                <li><a href="#explainable-ai">Explainable AI</a></li>
+                <li><a href="#survey-design">Survey Applications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Project 1: Voice Assistant Persuasion -->
+        <section id="conversational-ai" class="project">
+            <div class="container">
+                <div class="project-header">
+                    <h2 class="project-title">Persuasiveness of Voice Assistants</h2>
+                    <div class="award-badge">🏆 Best Paper Award Winner - ACM CUI 2024</div>
+                    <p class="project-subtitle">Exploring how vocal characteristics influence user engagement and decision-making in voice assistants interactions</p>
+                </div>
+
+                <!-- Introduction -->
+                <div class="section">
+                    <h3>Introduction</h3>
+                    <div class="content-card">
+                        <p>When Voice Assistants like Alexa or Siri deliver an information, do their vocal characteristics such as tone, age, and gender influence users' trust, engagement, and decision making? As these assistants increasingly handle complex decisions, this research examines how vocal attributes affect user behavior, particularly in critical scenarios like online shopping.</p>
+                    </div>
+                </div>
+
+                <!-- Cross-functional Partners -->
+                <div class="section">
+                    <h3>Cross-functional Partners</h3>
+                    <div class="content-card">
+                            
+                            <ul>
+                                <li>Apu Kapadia, Computer Science - Principle Investigator & research design guidance</li>
+                                <li>Minjeong Kim & Ran Huang, Merchandising team - Consumer behavior experiment design collaboration</li>
+                                <li>Donald Williamson, Computer Science - Voice assistant voice design guidance</li>
+                                <li>Statistics Department - Advanced analysis techniques consultation</li>
+                            </ul>
+                        </div>
+                </div>
+
+                <!-- My Role -->
+                <div class="section">
+                    <h3>My Role</h3>
+                    <div class="content-card">
+                        <h4>Lead Researcher</h4>
+                            <ul>
+                                <li>Led research material design and experiment execution in collaboration with Computer Science and Merchandising teams</li>
+                                <li>Conducted online survey with 340 participants across multiple user groups</li>
+                                <li>Preproccesed data and performed comprehensive statistical and qualitative analysis of collected data</li>
+                                <li>Periodically presented findings and insights to both internal and external stakeholders</li>
+                            </ul>
+                    </div>
+                </div>
+
+                <!-- Objective -->
+                <div class="section">
+                    <h3>Project Objective</h3>
+                    <div class="content-card">
+                        <p>Establish evidence-based guidelines for voice assistant design by investigating how the voice assistants' vocal tone affects users' decision-making in AI interactions, while balancing user engagement with voice assistant trustworthiness.</p>
+                    </div>
+                </div>
+
+                <!-- Research Question -->
+                <div class="section">
+                    <h3>Research Question</h3>
+                    <div class="content-card">
+                        <p><strong>Primary RQ:</strong> How does the perceived tone of a voice assistant's voice persuade participants and subsequently affect participants' purchase decisions?</p>
+                    </div>
+                </div>
+
+                <!-- Method -->
+                <div class="section">
+	                <h3>Method</h3>
+	                
+	                
+                    <div class="timeline">
+	                    <center><h4>Methodological Choices</h4></center>
+                        <h4>Online Survey with Quantitative and Qualitative Components</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-desc">Online survey enables standardized audio presentation across diverse geographical locations while maintaining ecological validity, as users naturally interact with voice assistants through personal devices in private settings. Quantitative measures capture persuasiveness and purchase intention with statistical precision, while qualitative open-ended responses provide explanatory context for understanding the mechanisms behind vocal tone effects.</div>
+                        </div>
+                        <h4>Alternative Methods</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-desc">Lab experiment: Provides maximum experimental control and consistent audio equipment but creates artificial environments that reduce ecological validity and limit sample sizes. </br>Field Study: Offers highest ecological validity in natural usage contexts but makes variable control extremely difficult with limited sample sizes.</div>
+                            </div>
+                        
+                        <h4>Why We Chose Online Survey</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-desc">The research objective required measuring authentic persuasion effects in realistic voice assistant contexts. Online delivery preserved natural interaction environments while maintaining experimental rigor, which is critical since voice assistants are predominantly used in private, personal settings where trust and intimacy dynamics influence persuasion. The 340-participant sample size needed for robust statistical power was also feasible online, while technical concerns were mitigated through audio normalization and attention checks.</div>
+                            </div>
+                         </div>
+                         
+                        
+                        <div class="timeline">
+	                        <h4>Sample Size (<i>N</i>=340)</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-desc">Rationale: Power analysis determined N=105 per condition needed to detect medium effect sizes (Cohen's d=0.5) with 80% power at α=0.05. The achieved sample of 340 participants provided robust statistical power while remaining practically feasible for high-quality data collection.</div>
+                        </div>
+                        </div>
+                        
+                        <div class="timeline">
+	                        <h4>Between-Subjects Design Choice</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-desc">Rationale: Between-subjects design prevented carryover effects where exposure to multiple vocal tones could create artificial contrast effects or demand characteristics. Voice characteristics form immediate impressions that persist across interactions, making within-subjects comparison problematic for measuring authentic persuasion responses in realistic contexts. </br> Participants were randomly assigned to one of three vocal tone conditions (positive, neutral, negative) to ensure balanced demographic distribution across groups. This randomization eliminated selection bias and enabled valid causal inferences about vocal tone effects on persuasion outcomes.</div>
+                        </div>
+                        </div>
+                        
+                        <div class="timeline">
+	                        <h4>Tone Validation with Pre-test</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-desc">Rationale: Conducted stimulus validation study (<i>N</i>=78) to confirm that generated vocal tones were perceived as intended (positive, neutral, negative) by independent judges. This pre-test ensured experimental validity by verifying that acoustic manipulations successfully created the intended emotional perceptions before testing persuasion effects in the main study.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline -->
+
+                    <h3>Research Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-phase">Month 1</div>
+                            <div class="timeline-desc">Generate and preprocess voice stimuli using Microsoft Speech Studio in consultation with Computer Science and Merchandising teams</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-phase">Month 2</div>
+                            <div class="timeline-desc">Stimulus validation study (<i>N</i>=78) and main study design with colaboration with the Computer Science and Merchandising teams</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-phase">Month 3</div>
+                            <div class="timeline-desc">Main study (<i>N</i>=340) via Qualtrics with weekly analysis sessions with cross functional stakeholders</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-phase">Month 4</div>
+                            <div class="timeline-desc">Conducted statistical analysis in R in consultation the Statistics department and delivered weekly stakeholder presentations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Findings -->
+                <div class="section">
+                    <h3>Findings</h3>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-number">18-20%</div>
+                            <div class="metric-label">Improvement in Positive & Neutral Tone's Persuasiveness, compared to the Negative tones </div>
+                        </div>
+                        <div class="metric">
+                            <img src="assets/img/voice_persuasive_emotion.png" alt="Persuasiveness for Voice Assistant Tones" class="responsive-img">
+
+                        </div>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-number">16-18%</div>
+                            <div class="metric-label">Improvement in Younger Female and Middle-aged Male Voice's Persuasiveness, compared to the Younger Male & Middle-aged Female Voices </div>
+                        </div>
+                        <div class="metric">
+                            <img src="/assets/img/voice_persuasive_gender_age.png" alt="Persuasiveness for Voice Assistants' Perceived Gender & Age" class="responsive-img">
+
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <center><h4>Qualitative Themes</h4></center>
+                            <p><b>Positive tone conveyed authenticity</b></p>
+                            <p><i>"The (positive) voice felt and sounded authentic and spoke pretty naturally"</i></p>
+                            <p><b>Neutral tone was perceived as calm and unbiased</b></p>
+                            <p><i>“I like that the voice was neutral sounding; it did not give off any type of extreme emotion, which helped it seem unbiased while it was giving the review of the products.”</i></p>
+                            <p><b>Negative tones were described as overwhelming and distracting</b></p>
+                            <p><i>"The voice (with negative tone) sounded uninterested or almost sad. It made it hard to concentrate on the recommendations.”</i></p>
+                            <p><b>Middle-aged male voice demonstrated reliability and expertise</b></p>
+                            <p><i>“The voice seemed confident and as if they knew what they were talking about.”</i></p>
+                            <p><b>Younger female voices were perceived as easy to understand & soothing</b></p>
+                            <p><i>“I liked how the voice was soft and very easy to understand everything that was being said.”</i></p>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact -->
+                <div class="section">
+                    <h3>Impact</h3>
+                    <div class="content-grid">
+                        <div class="content-card">
+                            <h4>Academic Impact</h4>
+                            <p>Won Best Paper Award at CUI 2024, establishing foundational research for tone-specific conversational AI design. The work has been cited in subsequent voice interface research and industry design guidelines.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>Industry Application</h4>
+                            <p>Findings directly inform voice assistant development at major tech companies, providing evidence-based recommendations for vocal tone optimization in commercial applications and voice commerce platforms.</p>
+                        </div>
+                        <div class="content-card">
+                            <h4>Design Guidelines</h4>
+                            <p>Created actionable design principles for conversational AI teams, balancing user engagement with ethical considerations and establishing standards for trustworthy voice interface development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://dl.acm.org/doi/abs/10.1145/3640794.3665545" class="paper-link" target="_blank">📖 Read Full Paper</a>
+            </div>
+        </section>
+
+        
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <h2>Let's Collaborate</h2>
+                <p>Interested in UX Research for Conversational AI or AI technologies?</p>
+                <div class="contact-links">
+                    <a href="mailto:sabhabib@iu.edu">Email</a>
+                    <a href="https://scholar.google.com/citations?user=rpNGXCgAAAAJ&hl=en" target="_blank">Publications</a>
+                    <a href="https://www.linkedin.com/in/sabidbinhabib/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

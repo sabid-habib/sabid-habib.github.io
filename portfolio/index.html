@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabid Bin Habib Pias - UX Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .project {
+            padding: 80px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .award-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #20a070 0%, #146c48 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        
+        .project-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+        
+        .overview-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #61676c;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-details {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            min-width: 120px;
+            color: #2c3e50;
+        }
+        
+        .detail-value {
+            color: #7f8c8d;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        .methodology {
+            margin: 60px 0;
+        }
+        
+        .methodology h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .method-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .method-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .method-list {
+            list-style: none;
+            color: #7f8c8d;
+        }
+        
+        .method-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .method-list li:before {
+            content: "•";
+            color: #2c3e50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .insights {
+            margin: 60px 0;
+        }
+        
+        .insights h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .insight-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .insight-list li {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #2c3e50;
+        }
+        
+        .insight-list li strong {
+            color: #2c3e50;
+        }
+        
+        .impact {
+            margin: 60px 0;
+            background: #ecf0f1;
+            padding: 40px;
+            border-radius: 15px;
+        }
+        
+        .impact h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .impact-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .impact-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .impact-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .quote {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #2c3e50;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .quote-author {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-style: normal;
+        }
+        
+        .paper-link {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .paper-link:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 25px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .project-overview {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Sabid Bin Habib Pias</h1>
+            <p>UX Researcher & Human-Computer Interaction Specialist</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#conversational-ai">Voice Assistant Tones</a></li>
+                <li><a href="#privacy-nudges">AI-based Privacy Warnings</a></li>
+                <li><a href="#decision-awareness">Conversational AI Decision Awareness</a></li>
+                <li><a href="#explainable-ai">Explainable AI</a></li>
+                <li><a href="#b2b-apps">B2B Sales App</a></li>
+                <li><a href="#survey-design">Survey App</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Project 1: Persuasiveness of Conversational Assistants -->
+        <section id="conversational-ai" class="project">
+            <div class="container">
+                <div class="project-header">
+                    <h2 class="project-title">Persuasiveness of Voice Assistants Tones</h2>
+                    <div class="award-badge">🏆 Best Paper Award Winner</div>
+                    <p class="project-subtitle">Evaluating how vocal characteristics of voice assistants influence user engagement and decision making in voice assistants</p>
+                </div>
+
+                <div class="project-overview">
+                    <div class="overview-text">
+                        <h3>Challenge</h3>
+                        <p>When Voice Assistants like Alexa or Siri deliver an information, do their vocal characteristics such as tone, age, and gender influence users' trust, engagement, and decision making? As these assistants increasingly handle complex decisions, this research examines how vocal attributes affect user behavior, particularly in critical scenarios like online shopping.</p>
+                        
+                        <h3>Solution</h3>
+                        <p>I designed and conducted a comprehensive study using Qualtrics-based online surveys with A/B testing to evaluate how different vocal tones impact user persuasiveness and engagement with conversational assistants.</p>
+                        
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3640794.3665545" class="paper-link" target="_blank">📖 Read Full Paper</a>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Role:</span>
+                            <span class="detail-value">Lead Researcher</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Timeline:</span>
+                            <span class="detail-value">6 months</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Online Survey, A/B Testing, Qualitative Analysis</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Tools:</span>
+                            <span class="detail-value">Qualtrics, SPSS, R</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Sample Size:</span>
+                            <span class="detail-value">N = 340</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-number">18%</div>
+                        <div class="metric-label">Improvement in Persuasiveness</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">340</div>
+                        <div class="metric-label">Study Participants</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">3</div>
+                        <div class="metric-label">Vocal Tone Conditions</div>
+                    </div>
+                </div>
+
+                <div class="methodology">
+                    <h3>Research Methodology</h3>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h4>Data Collection</h4>
+                            <ul class="method-list">
+                                <li>Qualtrics-based online survey</li>
+                                <li>Product recommendation scenarios</li>
+                                <li>Open-ended response collection</li>
+                                <li>Demographic and behavioral data</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Experimental Design</h4>
+                            <ul class="method-list">
+                                <li>A/B testing with three conditions</li>
+                                <li>Neutral vs. positive vs. negative tones</li>
+                                <li>Between-subjects design</li>
+                                <li>Controlled voice assistant interactions</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Analysis</h4>
+                            <ul class="method-list">
+                                <li>Statistical analysis with SPSS and R</li>
+                                <li>Persuasiveness metrics comparison</li>
+                                <li>Qualitative thematic analysis</li>
+                                <li>Effect size calculations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact">
+                    <h3>UX Research Impact</h3>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4>Design Guidelines Established</h4>
+                            <p>Created evidence-based recommendations for voice interface design, providing clear guidelines on optimal vocal tones for different interaction contexts.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>Industry Foundation</h4>
+                            <p>Won best paper award for establishing the foundation for tone-specific research, influencing how conversational AI systems balance engagement with user safety.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>User Trust Enhancement</h4>
+                            <p>Demonstrated how vocal characteristics significantly impact user trust and decision-making, informing voice commerce and recommendation system design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insights">
+                    <h3>Key Insights</h3>
+                    <ul class="insight-list">
+                        <li><strong>Neutral and positive tones significantly outperformed negative tones</strong> by 18% in persuasiveness measures, establishing clear guidelines for voice interface design.</li>
+                        <li><strong>Tone-specific research foundation established</strong> for balancing user engagement with safety considerations in AI-powered voice systems.</li>
+                        <li><strong>Critical implications for voice commerce</strong> - showing how vocal characteristics can influence purchasing decisions and user trust.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 2: Privacy Decisions with LLM -->
+        <section id="privacy-nudges" class="project">
+            <div class="container">
+                <div class="project-header">
+                    <h2 class="project-title">Privacy Decisions with LLM</h2>
+                    <p class="project-subtitle">Designing contextual nudges to guide privacy-conscious decision-making in social media sharing</p>
+                </div>
+
+                <div class="project-overview">
+                    <div class="overview-text">
+                        <h3>Challenge</h3>
+                        <p>Social media users frequently share content without considering privacy implications. How can we use AI-generated contextual nudges to promote more thoughtful privacy decisions without increasing cognitive burden?</p>
+                        
+                        <h3>Solution</h3>
+                        <p>I developed an innovative approach using one-shot prompt engineering to generate contextual privacy nudges, then conducted a comprehensive study to evaluate their effectiveness on user behavior and cognitive load.</p>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Role:</span>
+                            <span class="detail-value">Lead Researcher & Designer</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Timeline:</span>
+                            <span class="detail-value">4 months</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Online Survey, A/B Testing, Thematic Analysis</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Tools:</span>
+                            <span class="detail-value">Qualtrics, ChatGPT, MAXQDA, Prolific</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Sample Size:</span>
+                            <span class="detail-value">N = 214</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-number">13%</div>
+                        <div class="metric-label">Reduction in Privacy-Violating Actions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">16%</div>
+                        <div class="metric-label">Decrease in Cognitive Load</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">4</div>
+                        <div class="metric-label">Nudge Conditions Tested</div>
+                    </div>
+                </div>
+
+                <div class="methodology">
+                    <h3>Research Methodology</h3>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h4>Data Collection</h4>
+                            <ul class="method-list">
+                                <li>Prolific participant recruitment (US users)</li>
+                                <li>68 memes across 13 privacy categories</li>
+                                <li>Likert scale sharing likelihood ratings</li>
+                                <li>Cognitive load and VOPP measurements</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Experimental Design</h4>
+                            <ul class="method-list">
+                                <li>Between-subjects design (4 conditions)</li>
+                                <li>Generalized Latin square distribution</li>
+                                <li>No nudge, universal, categorical, granular</li>
+                                <li>OODA framework-based nudge structure</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Analysis</h4>
+                            <ul class="method-list">
+                                <li>Kruskal-Wallis test for non-parametric data</li>
+                                <li>Dunn's post-hoc with Bonferroni correction</li>
+                                <li>Inductive thematic analysis in MAXQDA</li>
+                                <li>Two-coder consensus approach</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact">
+                    <h3>UX Research Impact</h3>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4>Scalable Privacy Protection</h4>
+                            <p>Demonstrated how AI-generated nudges can provide personalized privacy guidance at scale, offering a practical solution for technology platforms.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>Ethical AI Design Framework</h4>
+                            <p>Established principles for using AI to support rather than manipulate user decision-making, advancing ethical considerations in persuasive technology.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>Cognitive Load Optimization</h4>
+                            <p>Proved that well-designed privacy interventions can simultaneously improve decision quality while reducing mental burden on users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insights">
+                    <h3>Key Insights</h3>
+                    <ul class="insight-list">
+                        <li><strong>Granular contextual nudges most effective</strong> - providing specific, context-aware guidance reduced privacy-violating sharing decisions by 13%.</li>
+                        <li><strong>Cognitive load reduction achieved</strong> - well-designed nudges decreased mental effort by 16% while improving decision quality.</li>
+                        <li><strong>Scalable privacy protection solution</strong> - demonstrated how AI-generated nudges can provide personalized privacy guidance at scale for technology platforms.</li>
+                        <li><strong>Ethical AI design advancement</strong> - established framework for using AI to support rather than manipulate user decision-making.</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    "The privacy advice helped me think about things I wouldn't normally consider, like how the person in the meme might feel if this went viral."
+                    <div class="quote-author">— Study Participant on Contextual Nudges</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 3: Decision Awareness for LLM Recommendations -->
+        <section id="decision-awareness" class="project">
+            <div class="container">
+                <div class="project-header">
+                    <h2 class="project-title">Decision Awareness for LLM Recommendations</h2>
+                    <p class="project-subtitle">Understanding how young adults decide when to verify AI recommendations through vocal interventions</p>
+                </div>
+
+                <div class="project-overview">
+                    <div class="overview-text">
+                        <h3>Challenge</h3>
+                        <p>Users often blindly follow or unnecessarily double-check AI recommendations. When do young people feel the need to verify AI advice versus trusting it directly? How can vocal interventions improve decision-making awareness?</p>
+                        
+                        <h3>Solution</h3>
+                        <p>I prototyped a customized voice assistant using GPT-4 API with varying vocal interventions, then conducted in-depth interviews to understand how these interventions affected users' decision-making awareness and verification behaviors.</p>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Role:</span>
+                            <span class="detail-value">Lead Researcher & Prototype Developer</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Timeline:</span>
+                            <span class="detail-value">12 weeks</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Semi-structured Interviews, Prototype Testing</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Tools:</span>
+                            <span class="detail-value">GPT-4 API, Zoom, Thematic Analysis</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Sample Size:</span>
+                            <span class="detail-value">N = 14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-number">14</div>
+                        <div class="metric-label">In-depth Interviews</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">45</div>
+                        <div class="metric-label">Minutes per Session</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">4</div>
+                        <div class="metric-label">Verification Levels Identified</div>
+                    </div>
+                </div>
+
+                <div class="methodology">
+                    <h3>Research Methodology</h3>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h4>Data Collection</h4>
+                            <ul class="method-list">
+                                <li>Purposive sampling (AI-experienced users)</li>
+                                <li>Semi-structured Zoom interviews</li>
+                                <li>Real-world AI usage scenarios</li>
+                                <li>Decision-making process exploration</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Experimental Design</h4>
+                            <ul class="method-list">
+                                <li>GPT-4 API voice assistant prototype</li>
+                                <li>Varying vocal intervention conditions</li>
+                                <li>Real-time interaction testing</li>
+                                <li>Comparative analysis across scenarios</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Analysis</h4>
+                            <ul class="method-list">
+                                <li>Inductive thematic analysis</li>
+                                <li>Mental model identification</li>
+                                <li>Decision framework development</li>
+                                <li>Pattern recognition across interviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact">
+                    <h3>UX Research Impact</h3>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4>Decision Framework Development</h4>
+                            <p>Established foundational framework for communication transparency in AI interactions, providing design principles for adaptive verification systems.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>User Mental Model Insights</h4>
+                            <p>Uncovered how users naturally assess stakes and domain familiarity when interacting with AI, informing more intuitive AI assistant design.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>Product Feature Recommendations</h4>
+                            <p>Provided actionable insights for improving session retention and subscription conversion through matched user expectations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insights">
+                    <h3>Decision-Making Framework Discovered</h3>
+                    <ul class="insight-list">
+                        <li><strong>Stake Assessment:</strong> "What's at stake?" and "Is it reversible?" - Users evaluate potential consequences before deciding to verify.</li>
+                        <li><strong>Domain Familiarity:</strong> "How much do I know about this?" - Users leverage their existing expertise to gauge AI reliability.</li>
+                        <li><strong>Verification Levels:</strong> Four distinct patterns emerged - Minimal, Quick Check, Moderate, and Extensive verification based on stakes and familiarity.</li>
+                        <li><strong>Communication Transparency:</strong> Vocal interventions that match user expectations reduce friction while promoting necessary verification.</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    "When ChatGPT recommended about investing my internship savings in stocks, I definitely wanted to research way more because I have no idea how any of that financial stuff works... if I mess up, I could lose everything I saved."
+                    <div class="quote-author">— Jason, on high-stakes financial advice</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 4: Decision Awareness for LLM Recommendations -->
+        <section id="decision-awareness" class="project">
+            <div class="container">
+                <div class="project-header">
+                    <h2 class="project-title">Decision Awareness for LLM Recommendations</h2>
+                    <p class="project-subtitle">Understanding how young adults decide when to verify AI recommendations through vocal interventions</p>
+                </div>
+
+                <div class="project-overview">
+                    <div class="overview-text">
+                        <h3>Challenge</h3>
+                        <p>Users often blindly follow or unnecessarily double-check AI recommendations. When do young people feel the need to verify AI advice versus trusting it directly? How can vocal interventions improve decision-making awareness?</p>
+                        
+                        <h3>Solution</h3>
+                        <p>I prototyped a customized voice assistant using GPT-4 API with varying vocal interventions, then conducted in-depth interviews to understand how these interventions affected users' decision-making awareness and verification behaviors.</p>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Role:</span>
+                            <span class="detail-value">Lead Researcher & Prototype Developer</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Timeline:</span>
+                            <span class="detail-value">12 weeks</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Semi-structured Interviews, Prototype Testing</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Tools:</span>
+                            <span class="detail-value">GPT-4 API, Amazon Polly, Zoom</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Sample Size:</span>
+                            <span class="detail-value">N = 14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-number">3</div>
+                        <div class="metric-label">Linguistic Conditions Tested</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">14</div>
+                        <div class="metric-label">In-depth Interviews</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">45</div>
+                        <div class="metric-label">Minutes per Session</div>
+                    </div>
+                </div>
+
+                <div class="methodology">
+                    <h3>Research Methodology</h3>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h4>Data Collection</h4>
+                            <ul class="method-list">
+                                <li>Wizard-of-Oz voice assistant simulation</li>
+                                <li>Budget management recommendation scenarios</li>
+                                <li>Amazon Polly text-to-speech implementation</li>
+                                <li>Semi-structured interview protocol</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Experimental Design</h4>
+                            <ul class="method-list">
+                                <li>Within-subjects design (3 conditions)</li>
+                                <li>Confident, neutral, skeptical language</li>
+                                <li>Latin square counterbalancing</li>
+                                <li>Standardized follow-up responses</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>Analysis</h4>
+                            <ul class="method-list">
+                                <li>Reflexive thematic analysis (Braun & Clarke)</li>
+                                <li>Constant comparative method</li>
+                                <li>Trust and credibility assessment</li>
+                                <li>Cross-condition pattern identification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact">
+                    <h3>UX Research Impact</h3>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4>Confidence Calibration Guidelines</h4>
+                            <p>Discovered the "Goldilocks Effect" - users prefer moderate confidence levels, providing design principles for AI communication that balances authority with trustworthiness.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>Human-AI Trust Framework</h4>
+                            <p>Established that users apply interpersonal trust criteria to AI interactions, informing more human-centered approaches to conversational AI design.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4>Evidence-Based Communication</h4>
+                            <p>Demonstrated that users value specific evidence over confidence claims, shifting focus from assertive language to credible data presentation in AI responses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insights">
+                    <h3>Key Insights</h3>
+                    <ul class="insight-list">
+                        <li><strong>The "Goldilocks Effect":</strong> Users prefer moderate confidence - not too pushy, not too uncertain. Extreme confidence triggers skepticism while excessive hedging reduces credibility.</li>
+                        <li><strong>"Show, Don't Tell":</strong> Users value specific evidence over confidence claims. Data references and credible details matter more than assertive language.</li>
+                        <li><strong>Human Standards Applied:</strong> Participants judge voice assistants using interpersonal trust criteria - looking for honesty, expertise, and appropriate social cues.</li>
+                    </ul>
+                </div>
+
+                <div class="quote">
+                    "The one that was too confident felt like it was trying to sell me something. The uncertain one made me question if it even knew what it was talking about. The middle one felt like talking to a knowledgeable friend."
+                    <div class="quote-author">— Study Participant on Linguistic Confidence Levels</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 5: Explainable AI -->
+        <section id="explainable-ai" class="project">
+            <div class="container">
+                <div class="project-header">
+                    <h2 class="project-title">Explainable AI in Power Plant Fault Prediction</h2>
+                    <p class="project-subtitle">
